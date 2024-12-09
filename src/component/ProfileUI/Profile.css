@@ -1,0 +1,276 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Hide sidebar by default for mobile */
+.sidebar {
+    display: none;
+}
+
+.sidebarLogo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; /* Changed from cover to contain */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+}
+
+
+.sidebarLogo:hover {
+    transform: scale(1.05);
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.settings-icon {
+    margin-bottom: 30px;
+}
+
+.profile.sidebar-profile {
+    width: 50px;
+    margin-top: auto; 
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    object-fit: cover;
+}
+
+/* Profile content defaults for mobile: full width */
+.profile-content-container {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+}
+
+.profile-header {
+    background: #111;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #444;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-displayname {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.profile-followers {
+    font-size: 14px;
+    color: #bbb;
+    margin: 5px 0 15px;
+}
+
+.edit-profile-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.profile-tabs {
+    display: flex;
+    justify-content: center;
+    background: #000;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #fff;
+}
+
+.post-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.post-input {
+    flex: 1;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.post-input::placeholder {
+    color: #777;
+}
+
+.post-button {
+    background: #0a84ff;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.finish-profile-section {
+    background: #111;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.finish-profile-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.finish-profile-remaining {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.finish-profile-cards {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.finish-profile-card {
+    background: #222;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-desc {
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.card-action {
+    background: #0a84ff;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Bottom nav for mobile screens */
+.bottom-nav-container {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 0;
+    bottom: 0; 
+    border-top: 1px solid #333;
+    z-index: 10;
+}
+
+.bottom-profile {
+    margin-bottom: 0;
+}
+
+/* Desktop view adjustments */
+@media (min-width: 1024px) {
+    .bottom-nav-container {
+        display: none;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .finish-profile-cards {
+        flex-direction: row; /* revert to row on desktop */
+    }
+
+    .profile-content-container {
+        max-width: 600px;
+        margin: 20px auto;
+    }
+}

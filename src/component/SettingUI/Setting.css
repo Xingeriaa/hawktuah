@@ -1,0 +1,278 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    background: #000;
+    border-right: 1px solid #333;
+    padding-top: 20px;
+}
+
+.sidebarLogo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; /* Changed from cover to contain */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+}
+
+
+.sidebarLogo:hover {
+    transform: scale(1.05);
+}
+
+.all-icons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.settings-icon-container {
+    margin-top: auto;
+    margin-bottom: 27px;
+}
+
+.profile.sidebar-profile {
+    margin-bottom: 20px;
+    width: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.profileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    object-fit: cover;
+}
+
+.content-area {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.back-icon {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.settings-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.settings-card {
+    background: #111;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.tab {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.tab.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+
+.setting-section,
+.other-settings-section {
+    margin-top: 20px;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+.setting-row-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.setting-row-text {
+    flex: 1;
+    font-size: 16px;
+    color: #fff;
+}
+
+.setting-row-right,
+.setting-row-arrow {
+    font-size: 14px;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+}
+
+.beta-badge {
+    display: inline-block;
+    background: #5c2b68;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin: 0 10px;
+}
+
+.toggle-switch .MuiSwitch-track {
+    background-color: #888 !important;
+}
+
+.toggle-switch .MuiSwitch-thumb {
+    background-color: #fff !important;
+}
+
+.other-settings-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.other-settings-desc {
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.bottom-nav-container {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 0;
+    bottom: 0; 
+    border-top: 1px solid #333;
+    z-index: 10;
+}
+
+.bottom-profile {
+    margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+    .bottom-nav-container {
+        display: none;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .top-nav {
+        display: none;
+    }
+
+    .content-area {
+        max-width: 600px;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 1023px) {
+    .sidebar {
+        display: none;
+    }
+
+    .top-nav {
+        display: flex;
+    }
+
+    .bottom-nav-container {
+        display: flex;
+    }
+}
+
+.logout-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logout-button {
+    background: #d00; /* Red background */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #c00;
+}
+
+.logout-button:active {
+    background: #a00;
+}

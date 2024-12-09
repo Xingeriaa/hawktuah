@@ -1,0 +1,122 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-background {
+    background: linear-gradient(to bottom right, #000000, #1a1a1a);
+    min-height: 100vh;
+}
+
+/* Bottom Navigation (Mobile) */
+.bottom-nav-container {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 0;
+    bottom: 0; 
+    border-top: 1px solid #333;
+    z-index: 10;
+}
+
+.icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.profile {
+    position: relative;
+    width: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    object-fit: cover;
+}
+
+/* Sidebar (Desktop) */
+.sidebar {
+    display: none;
+}
+
+.sidebarLogo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; /* Changed from cover to contain */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+}
+
+
+.sidebarLogo:hover {
+    transform: scale(1.05);
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center icons vertically within remaining space */
+    flex: 1;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Adjusting for Desktop */
+@media (min-width: 1024px) {
+    .bottom-nav-container {
+        display: none;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 80px;
+        background-color: #000000;
+        position: fixed;
+        left: 0;
+        top: 0; 
+        bottom: 0;
+        align-items: center;
+        border-right: 1px solid #333;
+        z-index: 10;
+    }
+
+    .profile {
+        margin-bottom: 20px;
+    }
+
+    /* Ensure icon-container grows to fill space between logo and profile */
+    .sidebarLogo {
+        margin-bottom: 0;
+    }
+
+    .icon-container {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .profile {
+        margin-bottom: 0;
+    }
+}
